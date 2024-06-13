@@ -1,0 +1,60 @@
+.formTodo {
+    display: flex;
+    gap: .5rem;
+
+    margin-top: -1.4rem;
+    margin-right: auto;
+    margin-left: auto;
+
+    max-width: 46rem;
+
+    padding: 1rem;
+}
+
+.formTodo>input {
+    display: flex;
+
+    width: 100%;
+
+    padding: 1rem;
+
+    background: var(--gray-500);
+    color: var(--gray-300);
+
+    border-radius: 8px;
+
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.formTodo>input:focus {
+    color: var(--gray-100);
+}
+
+.formTodo>button {
+    background: var(--blue-dark);
+    color: var(--gray-100);
+
+    display: flex;
+    align-items: center;
+
+    padding: 1rem;
+
+    font-size: .875rem;
+    font-weight: bold;
+
+    display: flex;
+    gap: .125rem;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.formTodo>button:hover {
+    background: var(--blue-color);
+}
+
+.formTodo>button>svg {
+    margin-top: 1px;
+}

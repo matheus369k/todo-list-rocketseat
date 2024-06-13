@@ -1,0 +1,176 @@
+.listTodo {
+    max-width: 46rem;
+
+    margin: auto;
+    margin-top: 4rem;
+
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: .875rem;
+}
+
+.header span {
+    font-weight: bold;
+}
+
+.header span.createTasks {
+    color: var(--blue-color);
+}
+
+.header span.finnishTasks {
+    color: var(--purple-color);
+}
+
+.header span::after {
+    content: attr(data-tasks);
+
+    font-size: .75rem;
+
+    background: var(--gray-400);
+    color: var(--gray-200);
+
+    padding: .12rem .5rem;
+
+    margin-left: .5rem;
+
+    border-radius: 20px;
+}
+
+.emptyList {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 17rem;
+}
+
+.emptyList>svg {
+    margin-bottom: 1rem;
+
+    color: var(--gray-300);
+}
+
+.emptyList>p {
+    color: var(--gray-300);
+}
+
+.emptyList>p:nth-child(2) {
+    font-weight: bold;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    gap: .75rem;
+}
+
+.list li {
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    gap: .75rem;
+
+    padding: 1rem;
+
+    width: 100%;
+
+    background: var(--gray-500);
+
+    border-radius: 8px;
+}
+
+.checkedTask {
+    width: 24px;
+    height: 24px;
+
+    border: 2px solid var(--blue-color);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: border .3s, background .3s;
+}
+
+.list input[type="checkbox"]:not(:checked):hover+.checkedTask {
+    border: 2px solid var(--blue-dark);
+    background: var(--gray-500);
+}
+
+.list input[type="checkbox"] {
+    all: unset;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    user-select: none;
+}
+
+.list input[type="checkbox"]:checked+.checkedTask {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+}
+
+.list input[type="checkbox"]:checked:hover+.checkedTask {
+    background: var(--purple-color);
+    border-color: var(--purple-color);
+}
+
+.list input[type="checkbox"]:checked+.checkedTask svg {
+    visibility: visible;
+}
+
+.list input[type="checkbox"]+.checkedTask svg {
+    visibility: hidden;
+}
+
+.list p {
+    font-size: .875rem;
+    color: var(--gray-100);
+}
+
+.list input[type="checkbox"]:checked+i+p {
+    color: var(--gray-300);
+
+    text-decoration: line-through;
+}
+
+.deleteTask {
+    margin-left: auto;
+
+    color: var(--gray-300);
+
+    padding: .25rem;
+
+    border-radius: 4px;
+
+    z-index: 50;
+
+    cursor: pointer;
+}
+
+.deleteTask:hover {
+    background: var(--gray-400);
+    color: var(--danger-color);
+}

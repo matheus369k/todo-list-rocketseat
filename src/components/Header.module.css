@@ -1,0 +1,13 @@
+.header {
+    background: var(--gray-700);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 200px;
+}
+
+.logo {
+    height: 3rem;
+}
